@@ -35,21 +35,17 @@ int main() {
     list<Goat> trip;
     bool run = true;
     while (run){
-	int choice = main_menu()
-	if (choice == 1){
-	    add_goat(trip, 
-	else if (choice == 2){
-	}
-	else if (choice == 3){
-	}
- 	else{
-	    cout << "Thanks for using the GOAT MANAGER 3001!" << endl;
+	int choice = main_menu();
+	if (choice == 1)
+	    add_goat(trip, names, colors);
+	else if (choice == 2)
+	    delete_goat(trip);
+	else if (choice == 3)
+	    display_trip(trip);
+ 	else
 	    run = false;
-	}
     }
-
-
-
+    cout << "Thanks for using the GOAT MANAGER 3001!" << endl;
     return 0;
 }
 
