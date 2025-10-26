@@ -38,6 +38,20 @@ int main() {
     return 0;
 }
 
+
+
+int select_goat(list<Goat> trip){
+    
+
+}
+
+void add_goat(list<Goat> &trip, string [] names, string [] colors){
+    int age = rand() % (MAX_AGE + 1);  // returns random number 0-20
+    string name = names[rand() % SZ_NAMES];
+    string color = colors[rand() % SZ_COLORS];
+    Goat temp = new Goat(
+}
+
 int main_menu(){
     cout << "\t*** GOAT MANAGER 3001 ***" << endl;	//choice display
     cout << "\t[1] Add a goat" << endl;
