@@ -41,8 +41,10 @@ int main() {
 
 
 int select_goat(list<Goat> trip){
-    
-
+    display_trip(trip);
+    cout << "\tChoice --> ";
+    int input;
+    cin >> input;
     if (input > trip.size() || input < 1){
 	cout << "Error. Please select a valid choice within the range.\n" << endl;
         input = select_goat(trip);
@@ -51,9 +53,9 @@ int select_goat(list<Goat> trip){
 }
 
 void delete_goat(list<Goat> &trip){
-    ""
+    cout << "Please select a Goat you would like to remove from the trip." << endl;
     int pos = select_goat(trip);
-
+    trip.erase(pos);
 }
 
 void add_goat(list<Goat> &trip, string [] names, string [] colors){
@@ -62,6 +64,12 @@ void add_goat(list<Goat> &trip, string [] names, string [] colors){
     string color = colors[rand() % SZ_COLORS];
     Goat temp = new Goat(name, age, color);
     trip.push_back(temp);
+}
+
+void display_trip(list<Goat> trip){
+    int count = 1;
+    for (Goat g : trip){
+        cout << "\t[" << count << "] " << g.get_name() << " ("
 }
 
 int main_menu(){
