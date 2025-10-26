@@ -64,12 +64,20 @@ int select_goat(list<Goat> trip){
 }
 
 void delete_goat(list<Goat> &trip){
+    if (trip.empty()){
+        cout << "No Goats available to remove." << endl;
+        return;
+    }
     cout << "Please select a Goat you would like to remove from the trip." << endl;
     int pos = select_goat(trip);
+    auto it = trip.begin();
+    for (auto it ; it != myList.end(); ++it) {
+        
+    }
     trip.erase(pos);
 }
 
-void add_goat(list<Goat> &trip, string [] names, string [] colors){
+void add_goat(list<Goat> &trip, string names[], string colors[]){
     int age = rand() % (MAX_AGE + 1);  // returns random number 0-20
     string name = names[rand() % SZ_NAMES];
     string color = colors[rand() % SZ_COLORS];
