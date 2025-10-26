@@ -38,3 +38,15 @@ int main() {
     return 0;
 }
 
+int main_menu(){
+    cout << "\t*** GOAT MANAGER 3001 ***" << endl;
+    cout << "\t[1] Add a goat" << endl;
+    cout << "\t[2] Delete a goat" << endl;
+    cout << "\t[3] List goats" << endl;
+    cout << "\t[4] Quit" << endl;
+    cout << "\tChoice --> ";
+    int input;
+    cin >> input;
+    if (input < 1 || input 
+
+}
