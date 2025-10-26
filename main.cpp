@@ -43,13 +43,25 @@ int main() {
 int select_goat(list<Goat> trip){
     
 
+    if (input > trip.size() || input < 1){
+	cout << "Error. Please select a valid choice within the range.\n" << endl;
+        input = select_goat(trip);
+    }
+    return input;
+}
+
+void delete_goat(list<Goat> &trip){
+    ""
+    int pos = select_goat(trip);
+
 }
 
 void add_goat(list<Goat> &trip, string [] names, string [] colors){
     int age = rand() % (MAX_AGE + 1);  // returns random number 0-20
     string name = names[rand() % SZ_NAMES];
     string color = colors[rand() % SZ_COLORS];
-    Goat temp = new Goat(
+    Goat temp = new Goat(name, age, color);
+    trip.push_back(temp);
 }
 
 int main_menu(){
