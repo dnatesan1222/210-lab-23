@@ -32,6 +32,21 @@ int main() {
     while (fin1 >> colors[i++]);
     fin1.close();
 
+    list<Goat> trip;
+    bool run = true;
+    while (run){
+	int choice = main_menu()
+	if (choice == 1){
+	    add_goat(trip, 
+	else if (choice == 2){
+	}
+	else if (choice == 3){
+	}
+ 	else{
+	    cout << "Thanks for using the GOAT MANAGER 3001!" << endl;
+	    run = false;
+	}
+    }
 
 
 
@@ -69,7 +84,9 @@ void add_goat(list<Goat> &trip, string [] names, string [] colors){
 void display_trip(list<Goat> trip){
     int count = 1;
     for (Goat g : trip){
-        cout << "\t[" << count << "] " << g.get_name() << " ("
+        cout << "\t[" << count << "] " << g.get_name() << " (" << g.get_age() << ", " << g.get_color() << ")" << endl;
+	count += 1;
+    }
 }
 
 int main_menu(){
