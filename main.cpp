@@ -39,14 +39,17 @@ int main() {
 }
 
 int main_menu(){
-    cout << "\t*** GOAT MANAGER 3001 ***" << endl;
+    cout << "\t*** GOAT MANAGER 3001 ***" << endl;	//choice display
     cout << "\t[1] Add a goat" << endl;
     cout << "\t[2] Delete a goat" << endl;
     cout << "\t[3] List goats" << endl;
     cout << "\t[4] Quit" << endl;
     cout << "\tChoice --> ";
-    int input;
+    int input;				//obtain user input
     cin >> input;
-    if (input < 1 || input 
-
+    if (input < 1 || input > 4){	//validate user input
+	cout << "Error. Please input a value within the range 1-4 to select a choice.\n" << endl;
+	input = main_menu();
+    } 
+    return input;			//return validated user input
 }
