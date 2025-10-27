@@ -11,10 +11,24 @@ using namespace std;
 const int SZ_NAMES = 200, SZ_COLORS = 25, MAX_AGE = 20;
 
 //select_goat() shows the user teh current trip list and takes in the user input to select a goat
+//arguments: list<Goat> trip - takes in the list of Goats
+//returns the position in the list of the goat the user selected
 int select_goat(list<Goat> trip);
+
+//delete_goat() removes a goat from the list based upon the user's choice
+//arguments: list<Goat> trip - takes in the list of Goats
 void delete_goat(list<Goat> &trip);
+
+//add_goat() randomly creates a new goat and adds it to the end of the trip list
+//arguments: list<Goat> trip - takes in the list of Goats, (2) string [] - for the array of names/colors to randomly select from
 void add_goat(list<Goat> &trip, string [], string []);
+
+//display_trip() outputs the goats in the trip in order with all their data and numbers them
+//arguments: list<Goat> trip - takes in the list of Goats
 void display_trip(list<Goat> trip);
+
+//main_menu() displays the list of options for the user to choose from to edit the goat trip list and use the program, then obtains the user's choice
+//returns the user's choice from the listed options
 int main_menu();
 
 int main() {
