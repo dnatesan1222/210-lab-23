@@ -10,6 +10,7 @@ using namespace std;
 
 const int SZ_NAMES = 200, SZ_COLORS = 25, MAX_AGE = 20;
 
+//select_goat() shows the user teh current trip list and takes in the user input to select a goat
 int select_goat(list<Goat> trip);
 void delete_goat(list<Goat> &trip);
 void add_goat(list<Goat> &trip, string [], string []);
@@ -55,7 +56,7 @@ int select_goat(list<Goat> trip){
     int input;
     cin >> input;
     if (input > trip.size() || input < 1){
-	cout << "Error. Please select a valid choice within the range.\n" << endl;
+	cout << "\n\tError. Please select a valid choice within the range." << endl;
         input = select_goat(trip);
     }
     return input;
@@ -63,10 +64,10 @@ int select_goat(list<Goat> trip){
 
 void delete_goat(list<Goat> &trip){
     if (trip.empty()){
-        cout << "No Goats available to remove." << endl;
+        cout << "\n\tNo Goats available to remove." << endl;
         return;
     }
-    cout << "Please select a Goat you would like to remove from the trip." << endl;
+    cout << "\n\tPlease select a Goat you would like to remove from the trip." << endl;
     int pos = select_goat(trip);
     auto it = trip.begin();
     for (int i = 1; i < pos; i++)
@@ -84,8 +85,9 @@ void add_goat(list<Goat> &trip, string names[], string colors[]){
 
 void display_trip(list<Goat> trip){
     int count = 1;
+    cout << "\n\tGoat trip list:" << endl;
     for (Goat g : trip){
-        cout << "\n\t[" << count << "] " << g.get_name() << " (" << g.get_age() << ", " << g.get_color() << ")" << endl;
+        cout << "\t[" << count << "] " << g.get_name() << " (" << g.get_age() << ", " << g.get_color() << ")" << endl;
 	count += 1;
     }
 }
@@ -100,7 +102,7 @@ int main_menu(){
     int input;				//obtain user input
     cin >> input;
     if (input < 1 || input > 4){	//validate user input
-	cout << "Error. Please input a value within the range 1-4 to select a choice.\n" << endl;
+	cout << "\n\tError. Please input a value within the range 1-4 to select a choice." << endl;
 	input = main_menu();
     } 
     return input;			//return validated user input
