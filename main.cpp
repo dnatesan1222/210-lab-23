@@ -49,8 +49,6 @@ int main() {
     return 0;
 }
 
-
-
 int select_goat(list<Goat> trip){
     display_trip(trip);
     cout << "\tChoice --> ";
@@ -71,30 +69,29 @@ void delete_goat(list<Goat> &trip){
     cout << "Please select a Goat you would like to remove from the trip." << endl;
     int pos = select_goat(trip);
     auto it = trip.begin();
-    for (auto it ; it != myList.end(); ++it) {
-        
-    }
-    trip.erase(pos);
+    for (int i = 1; i < pos; i++)
+        it++;
+    trip.erase(it);
 }
 
 void add_goat(list<Goat> &trip, string names[], string colors[]){
     int age = rand() % (MAX_AGE + 1);  // returns random number 0-20
     string name = names[rand() % SZ_NAMES];
     string color = colors[rand() % SZ_COLORS];
-    Goat temp = new Goat(name, age, color);
+    Goat temp(name, age, color);
     trip.push_back(temp);
 }
 
 void display_trip(list<Goat> trip){
     int count = 1;
     for (Goat g : trip){
-        cout << "\t[" << count << "] " << g.get_name() << " (" << g.get_age() << ", " << g.get_color() << ")" << endl;
+        cout << "\n\t[" << count << "] " << g.get_name() << " (" << g.get_age() << ", " << g.get_color() << ")" << endl;
 	count += 1;
     }
 }
 
 int main_menu(){
-    cout << "\t*** GOAT MANAGER 3001 ***" << endl;	//choice display
+    cout << "\n\t*** GOAT MANAGER 3001 ***" << endl;	//choice display
     cout << "\t[1] Add a goat" << endl;
     cout << "\t[2] Delete a goat" << endl;
     cout << "\t[3] List goats" << endl;
